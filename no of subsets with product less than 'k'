@@ -1,0 +1,23 @@
+def countSubsets(arr, N, K):
+    count = 0
+
+    def backtrack(start, product):
+        nonlocal count
+        if product <= K:
+            count += 1
+        else:
+            return
+
+        for i in range(start, N):
+            backtrack(i + 1, product * arr[i])
+
+    backtrack(0, 1)
+    return count - 1  # Subtract 1 to exclude the empty subset
+
+# Test case
+arr = [2, 4, 5, 3]
+N = len(arr)
+K = 12
+
+result = countSubsets(arr, N, K)
+print(result)
