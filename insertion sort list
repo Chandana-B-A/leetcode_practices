@@ -1,0 +1,20 @@
+class Solution {
+    public ListNode sortList(ListNode head) {
+        if(head==null) return head;
+        ListNode cur=head;
+        while(cur!=null){
+            ListNode iter=cur;
+            ListNode min=iter;
+            while(iter!=null){
+                if(iter.val<min.val)
+                    min=iter;
+                iter=iter.next;
+            }
+            int temp=cur.val;
+            cur.val=min.val;
+            min.val=temp;
+            cur=cur.next;
+        }
+        return head;
+    }
+}
