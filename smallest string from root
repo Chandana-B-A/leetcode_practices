@@ -1,0 +1,23 @@
+class Solution {
+    String small=null;
+    public String smallestFromLeaf(TreeNode root) {
+        dfs(root,new StringBuilder());
+        return small;
+    }
+    private void dfs(TreeNode node, StringBuilder cur){
+        if(node==null)
+            return;
+        cur.insert(0,(char)('a'+node.val));
+        if(node.left==null && node.right==null)
+            update(cur.toString());
+        else{
+            dfs(node.left,cur);
+            dfs(node.right,cur);
+        }
+        cur.deleteCharAt(0);
+    }
+    private void update(String cur){
+        if(small==null || cur.compareTo(small)<0)
+            small=cur;
+    }
+}
