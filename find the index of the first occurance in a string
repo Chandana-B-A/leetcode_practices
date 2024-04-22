@@ -1,0 +1,7 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if(haystack=="\0" || needle=="\0") return -1;
+        if(!haystack.contains(needle)) return -1;
+        return haystack.indexOf(needle);
+    }
+}
