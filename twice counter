@@ -1,0 +1,16 @@
+class Solution
+{
+    public int countWords(String list[], int n)
+    {
+        // code here 
+        int count=0;
+        HashMap<String,Integer>map=new HashMap();
+        for(int i=0;i<n;i++){
+            map.put(list[i],map.getOrDefault(list[i],0)+1);
+        }
+        for(String c:map.keySet()){
+            if(map.get(c)==2)count++;
+        }
+        return count;
+    }
+}
