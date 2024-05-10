@@ -10,7 +10,7 @@ class Solution {
 
             if (nums[i] == minK) {
                 leftIdx = i;
-            }
+            } 
 
             if (nums[i] == maxK) {
                 rightIdx = i;
