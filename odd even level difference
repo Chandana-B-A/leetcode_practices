@@ -1,0 +1,23 @@
+class Solution
+{
+    int oddsum=0, evensum=0;
+	void findLevelDiff(Node root, int level)
+	{
+	    //code here
+	    if(root == null) return ;
+	    
+	    if(level%2 == 0)
+	        evensum += root.data;
+	    else
+	        oddsum += root.data;
+	        
+	    findLevelDiff(root.left, level+1);
+	    findLevelDiff(root.right, level+1);
+	    
+	   
+	}
+	int getLevelDiff(Node root){
+	    findLevelDiff(root,1);
+	    return oddsum-evensum;
+	}
+}
