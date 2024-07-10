@@ -14,7 +14,7 @@ class Solution {
         ListNode high=new ListNode(0);
         ListNode smallHead=small;
         ListNode highHead=high;
-
+ 
         while(head!=null){
             if(head.val < x){
                 smallHead.next=head;
